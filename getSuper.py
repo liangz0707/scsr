@@ -83,7 +83,7 @@ def SR(img,Dh, Dl,l_da=0.0001, scale=3.0,patch_sizel=3.0, overlap=1.0 ,img_size=
     joblib.dump(imgh, 'img_h2.pkl')
     return imgh
 def readSR():
-    return joblib.load('img_h2```````.pkl')
+    return joblib.load('img_h2.pkl')
 
 #加载字典
 mat = scipy.io.loadmat('./Dictionary/dictionary.mat')
