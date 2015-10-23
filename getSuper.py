@@ -15,7 +15,7 @@ from sklearn import linear_model
 import bicubic_2d
 import matplotlib.pyplot as plt
 #超分辨率处理函数
-def SR(img,Dh, Dl,l_da=0.00005, scale=3.0,patch_sizel=3.0, overlap=1.0 ,img_size=1.0):
+def SR(img,Dh, Dl,l_da=0.0001, scale=3.0,patch_sizel=3.0, overlap=1.0 ,img_size=1.0):
     #l_da是经验值
     #得到特征域
     feat_scale=2.0
@@ -96,58 +96,108 @@ def SR(img,Dh, Dl,l_da=0.00005, scale=3.0,patch_sizel=3.0, overlap=1.0 ,img_size
 
 
 def readSR():
-    return joblib.load('img_h3.pkl')
+    return joblib.load('img_h0005.pkl')
 def psnr( img1,img2):
     mse = np.mean( (img1 - img2) ** 2 )
     if mse == 0:
         return 100
     return 20 * math.log10(np.max(img1) / math.sqrt(mse))
 
-#加载字典
-mat = scipy.io.loadmat('./Dictionary/dictionary.mat')
-Dl_dict = np.asarray( mat['Dl'],dtype='float64')
-Dh_dict = np.asarray( mat['Dh'],dtype='float64')
+def m1():
+    #加载字典
+    mat = scipy.io.loadmat('./Dictionary/dictionary.mat')
+    Dl_dict = np.asarray( mat['Dl'],dtype='float64')
+    Dh_dict = np.asarray( mat['Dh'],dtype='float64')
 
-#提取出L通道进行计算其他通道使用Bicubic进行计算
-src_rgb_img = io.imread('./Data/Child_input.png')
-#src1 = data.lena()
-#src =src1[240:300,238:300,:]
-#需要变称散的倍数才能处理
-#src_rgb_img = bicubic_2d.bicubic2d(src,1/3.0)
-src_rgb_img = src_rgb_img[:src_rgb_img.shape[0]-src_rgb_img.shape[0]%3,:src_rgb_img.shape[1]-src_rgb_img.shape[0]%3,:]
-#print src_rgb_img.shape
+    #提取出L通道进行计算其他通道使用Bicubic进行计算
+    #src_rgb_img = io.imread('./Data/Child_input.png')
+    src_rgb_img = data.lena()
+    src = src_rgb_img[:src_rgb_img.shape[0]-src_rgb_img.shape[0]%3,:src_rgb_img.shape[1]-src_rgb_img.shape[0]%3,:]
+    src_rgb_img = src
+    #需要变称散的倍数才能处理
+    #src_rgb_img = bicubic_2d.bicubic2d(src,1/3.0)
+    src_rgb_img = bicubic_2d.bicubic2d(src_rgb_img,1/3.0)
+    src_rgb_img = src_rgb_img[:src_rgb_img.shape[0]-src_rgb_img.shape[0]%3,:src_rgb_img.shape[1]-src_rgb_img.shape[0]%3,:]
+    #print src_rgb_img.shape
 
-src_Lab_img = color.rgb2lab(src_rgb_img)
-src_Lab_img_L = src_Lab_img[:,:,0]
-src_Lab_img_a = src_Lab_img[:,:,1]
-src_Lab_img_b = src_Lab_img[:,:,2]
+    src_Lab_img = color.rgb2lab(src_rgb_img)
+    src_Lab_img_L = src_Lab_img[:,:,0]
+    src_Lab_img_a = src_Lab_img[:,:,1]
+    src_Lab_img_b = src_Lab_img[:,:,2]
 
-#不同的L通道来源
-#dst_Lab_img_L = readSR()
-#m = dst_Lab_img_L<0
-#dst_Lab_img_L[m] = 0
-#print np.max(dst_Lab_img_L),np.min(dst_Lab_img_L)
-dst_Lab_img_L = SR(src_Lab_img_L,Dh_dict,Dl_dict)
-#dst_Lab_img_L = imresize(src_Lab_img_L,3.0,'bicubic')
-#dst_Lab_img_L= dst_Lab_img_L/255.0*(np.max(src_Lab_img_L)-np.min(src_Lab_img_L))+np.min(src_Lab_img_L)
+    #不同的L通道来源
+    #dst_Lab_img_L = readSR()
+    #m = dst_Lab_img_L<0
+    #dst_Lab_img_L[m] = 0
+    #print np.max(dst_Lab_img_L),np.min(dst_Lab_img_L)
+    #dst_Lab_img_L = SR(src_Lab_img_L,Dh_dict,Dl_dict)
+    dst_Lab_img_L = imresize(src_Lab_img_L,3.0,'bicubic')
+    #dst_Lab_img_L= dst_Lab_img_L/255.0*(np.max(src_Lab_img_L)-np.min(src_Lab_img_L))+np.min(src_Lab_img_L)
 
-dst_Lab_img_a = imresize(src_Lab_img_a,3.0,'bicubic')
-dst_Lab_img_a= dst_Lab_img_a/255.0*(np.max(src_Lab_img_a)-np.min(src_Lab_img_a))+np.min(src_Lab_img_a)
+    dst_Lab_img_a = imresize(src_Lab_img_a,3.0,'bicubic')
+    dst_Lab_img_a= dst_Lab_img_a/255.0*(np.max(src_Lab_img_a)-np.min(src_Lab_img_a))+np.min(src_Lab_img_a)
 
-dst_Lab_img_b = imresize(src_Lab_img_b,3.0,'bicubic')
-dst_Lab_img_b= dst_Lab_img_b/255.0*(np.max(src_Lab_img_b)-np.min(src_Lab_img_b))+np.min(src_Lab_img_b)
+    dst_Lab_img_b = imresize(src_Lab_img_b,3.0,'bicubic')
+    dst_Lab_img_b= dst_Lab_img_b/255.0*(np.max(src_Lab_img_b)-np.min(src_Lab_img_b))+np.min(src_Lab_img_b)
 
-img_lab = np.zeros((dst_Lab_img_L.shape[0],dst_Lab_img_L.shape[1],3))
-img_lab[:,:,0] = dst_Lab_img_L
-img_lab[:,:,1] = dst_Lab_img_a
-img_lab[:,:,2] = dst_Lab_img_b
+    img_lab = np.zeros((dst_Lab_img_L.shape[0],dst_Lab_img_L.shape[1],3))
+    img_lab[:,:,0] = dst_Lab_img_L
+    img_lab[:,:,1] = dst_Lab_img_a
+    img_lab[:,:,2] = dst_Lab_img_b
 
-dst = color.lab2rgb(img_lab)
-#src = src[:dst.shape[0],:dst.shape[1]]
+    dst = color.lab2rgb(img_lab)
+    #src = src[:dst.shape[0],:dst.shape[1]]
 
-#print np.mean(dst[10:-15,10:-15]*255-src[10:-15,10:-15])
+    #print np.mean(dst[10:-15,10:-15]*255-src[10:-15,10:-15])
 
-#print psnr(dst[10:-15,10:-15]*255,src[10:-15,10:-15])
-plt.imshow(dst,interpolation="none")
+    #print psnr(dst[10:-15,10:-15]*255,src[10:-15,10:-15])
+    plt.imshow(dst,interpolation="none")
 
-plt.show()
+    plt.show()
+
+def m2():
+    #加载字典
+    mat = scipy.io.loadmat('./Dictionary/dictionary.mat')
+    Dl_dict = np.asarray( mat['Dl'],dtype='float64')
+    Dh_dict = np.asarray( mat['Dh'],dtype='float64')
+
+    #提取出L通道进行计算其他通道使用Bicubic进行计算
+    src = data.lena()
+    src_lab = color.rgb2lab(src)
+
+    src_Lab_img_L = bicubic_2d.bicubic2d(src_lab[:,:,0],1/3.0)
+    src_Lab_img_a = bicubic_2d.bicubic2d(src_lab[:,:,1],1/3.0)
+    src_Lab_img_b = bicubic_2d.bicubic2d(src_lab[:,:,2],1/3.0)
+
+    src_Lab_img_L = src_Lab_img_L[:src_Lab_img_L.shape[0]-src_Lab_img_L.shape[0]%3,:src_Lab_img_L.shape[1]-src_Lab_img_L.shape[0]%3]
+    src_Lab_img_a = src_Lab_img_a[:src_Lab_img_a.shape[0]-src_Lab_img_a.shape[0]%3,:src_Lab_img_a.shape[1]-src_Lab_img_a.shape[0]%3]
+    src_Lab_img_b = src_Lab_img_b[:src_Lab_img_b.shape[0]-src_Lab_img_b.shape[0]%3,:src_Lab_img_b.shape[1]-src_Lab_img_b.shape[0]%3]
+
+
+    #不同的L通道来源
+    dst_Lab_img_L = readSR()
+    #dst_Lab_img_L = imresize(src_Lab_img_L,3.0,'bicubic')/2.55
+    #dst_Lab_img_L = SR(src_Lab_img_L,Dh_dict,Dl_dict)
+    #dst_Lab_img_L= dst_Lab_img_L/255.0*(np.max(src_Lab_img_L)-np.min(src_Lab_img_L))+np.min(src_Lab_img_L)
+
+    dst_Lab_img_a = imresize(src_Lab_img_a,3.0,'bicubic')
+    dst_Lab_img_a= dst_Lab_img_a/255.0*(np.max(src_Lab_img_a)-np.min(src_Lab_img_a))+np.min(src_Lab_img_a)
+
+    dst_Lab_img_b = imresize(src_Lab_img_b,3.0,'bicubic')
+    dst_Lab_img_b= dst_Lab_img_b/255.0*(np.max(src_Lab_img_b)-np.min(src_Lab_img_b))+np.min(src_Lab_img_b)
+
+    img_lab = np.zeros((dst_Lab_img_L.shape[0],dst_Lab_img_L.shape[1],3))
+    img_lab[:,:,0] = dst_Lab_img_L
+    img_lab[:,:,1] = dst_Lab_img_a
+    img_lab[:,:,2] = dst_Lab_img_b
+
+    dst = color.lab2rgb(img_lab)
+    #src = src[:dst.shape[0],:dst.shape[1]]
+    src = src[:dst.shape[0],:dst.shape[1]]
+    print np.mean((dst[10:-15,10:-15]*255-src[10:-15,10:-15])**2)
+    print np.mean(np.abs(dst[10:-15,10:-15]*255-src[10:-15,10:-15]))
+    print psnr(dst[10:-15,10:-15]*255,src[10:-15,10:-15])
+    plt.imshow(dst,interpolation="none")
+
+    plt.show()
+m2()
