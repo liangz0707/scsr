@@ -24,11 +24,13 @@
       <file leaf-file-name="getSuper.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/getSuper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65614617">
-              <caret line="184" column="0" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.02251185">
+              <caret line="191" column="14" selection-start-line="191" selection-start-column="14" selection-end-line="191" selection-end-column="14" />
               <folding>
                 <element signature="e#40#51#0" expanded="true" />
-                <marker date="1445571048557" expanded="true" signature="455:3182" placeholder="..." />
+                <element signature="e#3470#5479#0" expanded="false" />
+                <element signature="e#7066#8877#0" expanded="false" />
+                <element signature="e#8894#9639#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -38,18 +40,20 @@
         <entry file="file://$PROJECT_DIR$/bicubic_2d.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+              <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getSClib.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/getSClib.py">
+      <file leaf-file-name="colormanage.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/colormanage.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="143" column="28" selection-start-line="143" selection-start-column="28" selection-end-line="143" selection-end-column="28" />
-              <folding />
+              <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+              <folding>
+                <element signature="e#39#57#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -68,6 +72,8 @@
       <list>
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/getSClib.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/colormanage.py" />
         <option value="$PROJECT_DIR$/bicubic_2d.py" />
         <option value="$PROJECT_DIR$/getSuper.py" />
       </list>
@@ -77,10 +83,26 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1562" />
-    <option name="y" value="6" />
-    <option name="width" value="1400" />
-    <option name="height" value="1019" />
+    <option name="x" value="1752" />
+    <option name="y" value="64" />
+    <option name="width" value="1855" />
+    <option name="height" value="1285" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Buildout</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -105,6 +127,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -126,14 +149,13 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bicubic_interpolation_2D_Image" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="FullScreen" value="false" />
   </component>
@@ -274,9 +296,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="D:\develop_kit\python\WinPython2.7\python-2.7.10.amd64\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="scsr" />
@@ -330,27 +352,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1562" y="6" width="1400" height="1019" extended-state="0" />
+    <frame x="1752" y="64" width="1855" height="1285" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13142438" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32906976" sideWeight="0.5021075" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26627907" sideWeight="0.49789253" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32790697" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15413737" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30643514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22241232" sideWeight="0.49595687" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30697674" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2655771" sideWeight="0.5040431" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -369,8 +391,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/getSuper.py</url>
-          <line>88</line>
+          <line>86</line>
           <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/getSuper.py</url>
+          <line>165</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/getSuper.py</url>
+          <line>288</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -380,7 +412,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="20" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -391,7 +423,130 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#40#51#0" expanded="true" />
-            <marker date="1445571048557" expanded="true" signature="455:3182" placeholder="..." />
+            <element signature="e#3470#5479#0" expanded="false" />
+            <element signature="e#7066#8877#0" expanded="false" />
+            <element signature="e#8894#9639#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getSuper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+          <folding>
+            <element signature="e#40#51#0" expanded="true" />
+            <element signature="e#3470#5479#0" expanded="false" />
+            <element signature="e#7066#8877#0" expanded="false" />
+            <element signature="e#8894#9639#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getSClib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getSuper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#51#0" expanded="true" />
+            <element signature="e#3470#5479#0" expanded="false" />
+            <element signature="e#7066#8877#0" expanded="false" />
+            <element signature="e#8894#9639#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bicubic_2d.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getSClib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="143" column="28" selection-start-line="143" selection-start-column="28" selection-end-line="143" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getSuper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#51#0" expanded="true" />
+            <element signature="e#3470#5479#0" expanded="false" />
+            <element signature="e#7066#8877#0" expanded="false" />
+            <element signature="e#8894#9639#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bicubic_2d.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getSClib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="143" column="28" selection-start-line="143" selection-start-column="28" selection-end-line="143" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getSuper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#51#0" expanded="true" />
+            <element signature="e#3470#5479#0" expanded="false" />
+            <element signature="e#7066#8877#0" expanded="false" />
+            <element signature="e#8894#9639#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bicubic_2d.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getSClib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="143" column="28" selection-start-line="143" selection-start-column="28" selection-end-line="143" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getSuper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#51#0" expanded="true" />
+            <element signature="e#3470#5479#0" expanded="false" />
+            <element signature="e#7066#8877#0" expanded="false" />
+            <element signature="e#8894#9639#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -402,7 +557,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#40#51#0" expanded="true" />
-            <marker date="1445571048557" expanded="true" signature="455:3182" placeholder="..." />
+            <element signature="e#3470#5479#0" expanded="false" />
+            <element signature="e#7066#8877#0" expanded="false" />
+            <element signature="e#8894#9639#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -413,7 +570,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#40#51#0" expanded="true" />
-            <marker date="1445571048557" expanded="true" signature="455:3182" placeholder="..." />
+            <element signature="e#3470#5479#0" expanded="false" />
+            <element signature="e#7066#8877#0" expanded="false" />
+            <element signature="e#8894#9639#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -438,7 +597,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#40#51#0" expanded="true" />
-            <marker date="1445571048557" expanded="true" signature="455:3182" placeholder="..." />
+            <element signature="e#3470#5479#0" expanded="false" />
+            <element signature="e#7066#8877#0" expanded="false" />
+            <element signature="e#8894#9639#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -463,7 +624,9 @@
           <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
           <folding>
             <element signature="e#40#51#0" expanded="true" />
-            <marker date="1445571048557" expanded="true" signature="455:3182" placeholder="..." />
+            <element signature="e#3470#5479#0" expanded="false" />
+            <element signature="e#7066#8877#0" expanded="false" />
+            <element signature="e#8894#9639#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -481,7 +644,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#40#51#0" expanded="true" />
-            <marker date="1445571048557" expanded="true" signature="455:3182" placeholder="..." />
+            <element signature="e#3470#5479#0" expanded="false" />
+            <element signature="e#7066#8877#0" expanded="false" />
+            <element signature="e#8894#9639#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -492,7 +657,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#40#51#0" expanded="true" />
-            <marker date="1445571048557" expanded="true" signature="455:3182" placeholder="..." />
+            <element signature="e#3470#5479#0" expanded="false" />
+            <element signature="e#7066#8877#0" expanded="false" />
+            <element signature="e#8894#9639#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -501,29 +668,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/develop_kit/python/WinPython2.7/python-2.7.10.amd64/Lib/site-packages/skimage/color/colorconv.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9496644">
-          <caret line="568" column="0" selection-start-line="568" selection-start-column="0" selection-end-line="568" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/develop_kit/python/WinPython2.7/python-2.7.10.amd64/Lib/site-packages/scipy/misc/pilutil.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6931408">
-          <caret line="194" column="28" selection-start-line="194" selection-start-column="28" selection-end-line="194" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/develop_kit/python/WinPython2.7/python-2.7.10.amd64/Lib/site-packages/sklearn/linear_model/coordinate_descent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.29744527">
-          <caret line="443" column="0" selection-start-line="443" selection-start-column="0" selection-end-line="443" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -541,39 +685,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://F:/learning/scikit-learn/PCA/PCA.py">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06959153">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5131129">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/getSClib.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.9767687">
+          <caret line="119" column="16" selection-start-line="119" selection-start-column="16" selection-end-line="119" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/colormanage.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="143" column="28" selection-start-line="143" selection-start-column="28" selection-end-line="143" selection-end-column="28" />
-          <folding />
+          <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+          <folding>
+            <element signature="e#39#57#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bicubic_2d.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+          <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/getSuper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65614617">
-          <caret line="184" column="0" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.02251185">
+          <caret line="191" column="14" selection-start-line="191" selection-start-column="14" selection-end-line="191" selection-end-column="14" />
           <folding>
             <element signature="e#40#51#0" expanded="true" />
-            <marker date="1445571048557" expanded="true" signature="455:3182" placeholder="..." />
+            <element signature="e#3470#5479#0" expanded="false" />
+            <element signature="e#7066#8877#0" expanded="false" />
+            <element signature="e#8894#9639#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

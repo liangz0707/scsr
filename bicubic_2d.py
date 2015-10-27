@@ -26,6 +26,8 @@ def S(x,a=-0.5):
 '''
 
 def bicubic2d(src_img,scale):
+    if src_img.shape[0]<4:
+        return imresize(src_img,scale,'bicubic')
     scale = scale*1.0  #we need a float scale
     src_img = np.asarray(src_img,dtype ='float64') #we need a float 2d array
     xlen = src_img.shape[1]
