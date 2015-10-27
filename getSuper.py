@@ -14,6 +14,10 @@ from skimage import data
 from sklearn import linear_model
 import bicubic_2d
 import matplotlib.pyplot as plt
+import skimage
+from skimage.filters import gaussian_filter
+from skimage.morphology import disk
+from skimage.filters.rank import median
 #超分辨率处理函数
 def SR(img,Dh, Dl,l_da=0.0001, scale=3.0,patch_sizel=3.0, overlap=1.0 ,img_size=1.0):
     #l_da是经验值
@@ -237,34 +241,62 @@ def m3():
 
     plt.show()
 
+#使用变形代替这一步，均值已经非常接近了，所以只需要调整位置
+def IBP(imgh,imgl,scale):
+    for i in range(1):
+        lr = bicubic_2d.bicubic2d(imgh,1/3.0)
+        df = imgl - lr
+        p =np.mean(np.abs(df))
+        print i, p
+        if p<0.001:
+            break
+        df = bicubic_2d.bicubic2d(df,3.0)
+        imgf = gaussian_filter(df,0.5)
+        imgh= imgh + imgf
+
+    return imgh
+
+#我在这里对原始图像使用了中值滤波，结果提升明显，所以稀疏编码对于有噪声的图像回复并不理想。极值点容易丢失
+#必须要使用变形
+#新的方向，缩小编码几何，使用确定的字典 。 提高还原度PSNR。
+#图像金字塔、IBP、稀疏编码、patch变形
 def m4():
 
     #提取出L通道进行计算其他通道使用Bicubic进行计算
     src = data.lena()
+
     dst_sc = joblib.load('lena_result_sc_3x_ycbcr.pkl')
-    mask = dst_sc>255
-    dst_sc[mask] =255
-    mask = dst_sc<0
-    dst_sc[mask] =0
-
     dst_bi = joblib.load('lena_result_bicubic_3x_ycbcr.pkl')
-    mask = dst_bi>255
-    dst_bi[mask] =255
-    mask = dst_sc<0
-    dst_bi[mask] =0
+    '''
+    dst_sc_f = colormanage.rgb2ycbcr(dst_sc)
+    src_sc_f = colormanage.rgb2ycbcr(src)[:,:,0]
+    src_Ycbcr_img_Y = bicubic_2d.bicubic2d(src_sc_f,1/3.0)
+    src_Ycbcr_img_Y = src_Ycbcr_img_Y[:src_Ycbcr_img_Y.shape[0]-src_Ycbcr_img_Y.shape[0]%3,:src_Ycbcr_img_Y.shape[1]-src_Ycbcr_img_Y.shape[0]%3]
+    dst_sc_f[:,:,0] = IBP(dst_sc_f[:,:,0],src_Ycbcr_img_Y,3.0)
+    dst_sc = colormanage.ycbcr2rgb(dst_sc_f)
+ '''
+    src = src[:dst_sc.shape[0],:dst_sc.shape[1]]
+    src[:,:,0] = median(src[:,:,0], disk(1))
+    src[:,:,1] = median(src[:,:,1], disk(1))
+    src[:,:,2] = median(src[:,:,2], disk(1))
 
-    src = src[:dst_bi.shape[0],:dst_bi.shape[1]]
+    #由于差距太大所以随机可能更加接近原来结果
+    #mask = np.abs(dst_bi - dst_sc)>128
+    #dst_sc[mask] = (dst_bi + dst_sc)[mask] /2.0
 
-    d_y_bi = colormanage.rgb2ycbcr(dst_bi)[:,:,0]
-    d_y_sc = colormanage.rgb2ycbcr(dst_sc)[:,:,0]
-    s_y = colormanage.rgb2ycbcr(src)[:,:,0]
-
-    print psnr(dst_sc,src)
-    print psnr(dst_bi,src)
+    print psnr(dst_sc, src)
+    print psnr(dst_bi, src)
+    '''
+    mask = dst_bi-src > 10
+    dst_bi = dst_bi * 0
+    dst_bi[mask] = 255
+    '''
+    print psnr(src+8.0,src)
+    #print psnr(dst_bi,src)
     plt.subplot(1,2,1)
-    plt.imshow(np.asarray(dst_sc,dtype='uint8'))
+    plt.imshow(np.asarray(dst_sc,dtype='uint8'),interpolation="None")
     plt.subplot(1,2,2)
-    plt.imshow(np.asarray(dst_bi,dtype='uint8'))
+    plt.imshow(np.asarray(dst_bi,dtype='uint8'),interpolation="None")
     plt.show()
 
 def show():
@@ -288,3 +320,4 @@ def show():
 
 show()
 #m2()
+#m4()
